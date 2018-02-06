@@ -1,0 +1,30 @@
+
+  <h1>This is {{name}} </h1>
+    <p>
+    My Phone no: {{Phone}}.
+    </p>
+    <p>
+    Mail Id {{Email}}
+    </p>
+    <p>
+    My Adderss is Road no- {{Address.street}}
+    </p>
+      <p>
+    {{Address.locality}}
+  </p>
+  <button (click)= " ToggleHobbies()">{{ ShowHobbies ? "Hide Hobbies" : "Show Hobbies" }}</button>
+  <div *ngIf=" ShowHobbies">
+    <h3>Hobbies</h3>
+       <ul>
+           <li *ngFor=" let xoxo of hobbies; let i = index">
+            <strong> {{xoxo}} </strong><button (click) ="DeleteHobbie(i)">X</button>
+       </li>
+    </ul>
+    <form (submit)="addHobby(hob.value)">
+        <h3>Add Hobbies</h3>
+        <input type="text" #hob />
+      </form>
+    
+    
+  </div>
+  
